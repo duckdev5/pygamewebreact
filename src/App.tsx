@@ -15,7 +15,7 @@ function App() {
       "ESC - Pause Menu",
       "R - Restart Level"
     ],
-    gamePath: "/game/index.html"
+    gamePath: "/game/rpg_wasm.html"
   };
 
   const handleGameLoad = () => {
