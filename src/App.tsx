@@ -15,7 +15,7 @@ function App() {
       "ESC - Pause Menu",
       "R - Restart Level"
     ],
-    gamePath: "/game/webgodot.html"
+    gamePath: "/game/index.html"
   };
 
   const handleGameLoad = () => {
