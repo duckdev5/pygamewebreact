@@ -228,15 +228,97 @@ function App() {
         </div>
       </div>
 
+     {/* Info Modal */}
+            {showInfo && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <div className="bg-white border-4 border-gray-300 shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div className="border-b-2 border-gray-300 p-4 bg-gray-100 flex items-center justify-between">
+              <h3 className="font-bold text-xl">GAME INFORMATION</h3>
+              <button
+                onClick={() => setShowInfo(false)}
+                className="p-1 border-2 border-gray-400 bg-white hover:bg-gray-50 
+                         transition-colors duration-200 focus:outline-none focus:ring-2 
+                         focus:ring-gray-500"
+              >
+                ✕
+              </button>
+            </div>
+            <div className="p-6 space-y-6">
+              {/* Game Description */}
+              <div>
+                <h4 className="font-bold text-lg mb-3 text-gray-900">ABOUT THIS GAME</h4>
+                <p className="text-gray-700 leading-relaxed">
+                  {gameConfig.description}
+                </p>
+              </div>
+
+              {/* Controls */}
+              <div>
+                <h4 className="font-bold text-lg mb-3 text-gray-900">CONTROLS</h4>
+                <div className="bg-gray-50 border-2 border-gray-200 p-4">
+                  <div className="space-y-2">
+                    {gameConfig.controls.map((control, index) => (
+                      <div key={index} className="text-sm font-mono">
+                        <code className="text-gray-800">{control}</code>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Technical Info */}
+              <div>
+                <h4 className="font-bold text-lg mb-3 text-gray-900">TECHNICAL SPECIFICATIONS</h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="bg-gray-50 border-2 border-gray-200 p-4">
+                    <h5 className="font-semibold mb-2">GAME ENGINE</h5>
+                    <div className="text-sm text-gray-600 space-y-1">
+                      <p>ENGINE: Pygame</p>
+                      <p>RUNTIME: WebAssembly</p>
+                      <p>VERSION: {gameConfig.version}</p>
+                      <p>COMPILER: Pygbag</p>
+                    </div>
+                  </div>
+                  <div className="bg-gray-50 border-2 border-gray-200 p-4">
+                    <h5 className="font-semibold mb-2">REQUIREMENTS</h5>
+                    <div className="text-sm text-gray-600 space-y-1">
+                      <p>BROWSER: Modern WebAssembly support</p>
+                      <p>MEMORY: 512MB+ recommended</p>
+                      <p>AUDIO: Web Audio API</p>
+                      <p>INPUT: Keyboard required</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Tips */}
+              <div>
+                <h4 className="font-bold text-lg mb-3 text-gray-900">GAMEPLAY TIPS</h4>
+                <div className="bg-gray-50 border-2 border-gray-200 p-4">
+                  <ul className="text-sm text-gray-700 space-y-1">
+                    <li>• Make sure your browser supports WebAssembly</li>
+                    <li>• Use headphones for the best audio experience</li>
+                    <li>• Press ESC to access the pause menu during gameplay</li>
+                    <li>• If the game doesn't load, try refreshing the page</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Footer */}
       <footer className="border-t-4 border-gray-300 bg-white mt-16">
-        <div className="max-w-6xl mx-auto px-6 py-6 text-center text-sm text-gray-600">
-          <p>POWERED BY PYGAME • COMPILED WITH PYGBAG • RUNNING ON WEBASSEMBLY</p>
-          <p className="mt-1">© 2025 - RETRO GAMING EXPERIENCE</p>
+        <div className="max-w-6xl mx-auto px-6 py-6">
+          <div className="text-center text-sm text-gray-600">
+            <p>POWERED BY PYGAME • COMPILED WITH PYGBAG • RUNNING ON WEBASSEMBLY</p>
+            <p className="mt-1">© 2025 - RETRO GAMING EXPERIENCE</p>
+          </div>
         </div>
       </footer>
     </div>
   );
 }
 
-export default App;
+export default App; 
