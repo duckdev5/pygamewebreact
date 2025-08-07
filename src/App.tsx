@@ -72,10 +72,10 @@ function App() {
   return (
     <Router>
       <div className="flex justify-center gap-4 mt-4">
-        <Link to="/" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">🏚️Home</Link>
-        <Link to="/comic" className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600">💑Sevgiliye özel çizgiroman yaptır</Link>
-        <Link to="/visualgame" className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">👾Sevgiliye özel görsel roman oyunu yaptır</Link>
-        <Link to="/blog" className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">✍️Blog / yazılar</Link>
+        <Link to="/" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Home</Link>
+        <Link to="/comic" className="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600">Sevgiliye özel çizgiroman yaptır</Link>
+        <Link to="/visualgame" className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">Sevgiliye özel görsel roman oyunu yaptır</Link>
+        <Link to="/blog" className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">Blog / yazılar</Link>
       </div>
 
       {/* Sayfa Yönlendirmeleri */}
